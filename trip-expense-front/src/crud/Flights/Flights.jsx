@@ -4,6 +4,7 @@ import "./Flights.css";
 import CreateFlightModal from "../../components/modals/CreateFlightModal";
 import EditFlightModal from "../../components/modals/EditFlightModal";
 import ConfirmModal from "../../components/modals/ConfirmModal";
+import { MdDelete, MdEdit } from "react-icons/md";
 
 const Flights = () => {
   const [flights, setFlights] = useState([]);
@@ -99,11 +100,11 @@ const Flights = () => {
                   <button className="edit-button" onClick={() => {
                     setFlightToEdit(flight);
                     setEditModalOpen(true);
-                  }}>Editar</button>
+                  }}><MdEdit size={16}/></button>
                   <button className="delete-button" onClick={() => {
                     setFlightToDelete(flight.flightId);
                     setDeleteModalOpen(true);
-                  }}>Eliminar</button>
+                  }}><MdDelete size={16}/></button>
                 </div>
               </div>
             </div>

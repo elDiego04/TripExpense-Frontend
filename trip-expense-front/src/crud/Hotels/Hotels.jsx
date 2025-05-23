@@ -4,6 +4,7 @@ import "./Hotels.css";
 import CreateHotelModal from "../../components/modals/CreateHotelModal";
 import EditHotelModal from "../../components/modals/EditHotelModal";
 import ConfirmModal from "../../components/modals/ConfirmModal";
+import { MdDelete, MdEdit } from "react-icons/md";
 
 const Hotels = () => {
   const [hotels, setHotels] = useState([]);
@@ -98,13 +99,13 @@ const Hotels = () => {
                     setHotelToEdit(hotel);
                     setEditModalOpen(true);
                   }}>
-                    Editar
+                    <MdEdit size={16}/>
                   </button>
                   <button className="delete-button" onClick={() => {
                     setHotelToDelete(hotel.id);
                     setDeleteModalOpen(true);
                   }}>
-                    Eliminar
+                    <MdDelete size={16}/>
                   </button>
                 </div>
               </div>

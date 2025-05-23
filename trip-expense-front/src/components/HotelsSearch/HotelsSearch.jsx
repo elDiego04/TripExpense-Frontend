@@ -2,21 +2,21 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "./HotelsSearch.css";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 
 const SearchForm = () => {
-  const [checkInDate, setCheckInDate] = useState(new Date());
-  const [checkOutDate, setCheckOutDate] = useState(new Date());
+  const [checkInDate, setCheckInDate] = useState(null);
+  const [checkOutDate, setCheckOutDate] = useState(null);
   const [showCalendar, setShowCalendar] = useState({ checkIn: false, checkOut: false });
   const [origin, setOrigin] = useState("");
   const [destination, setDestination] = useState("");
-  const [rooms, setRooms] = useState(1);
-  const [guests, setGuests] = useState(1);
+  const [rooms, setRooms] = useState("");
+  const [guests, setGuests] = useState("");
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/signup"); 
+    navigate("/signup");
   };
 
   return (
@@ -37,7 +37,16 @@ const SearchForm = () => {
             onChange={(e) => setDestination(e.target.value)}
             className="search-input"
           />
-          <select value={rooms} onChange={(e) => setRooms(e.target.value)} className="select-dropdown">
+
+          {/* Rooms select con placeholder */}
+          <select
+            value={rooms}
+            onChange={(e) => setRooms(parseInt(e.target.value))}
+            className="select-dropdown"
+          >
+            <option value="" disabled>
+              Habitaciones
+            </option>
             {[...Array(6).keys()].map((num) => (
               <option key={num} value={num + 1}>
                 {num + 1} habitación(es)
@@ -45,60 +54,76 @@ const SearchForm = () => {
             ))}
           </select>
 
+          {/* Fecha Check-In */}
           <div className="date-picker">
             <input
               type="text"
               readOnly
               placeholder="Check-In"
-              value={checkInDate.toLocaleDateString()}
+              value={checkInDate ? checkInDate.toLocaleDateString() : ""}
               className="search-input"
-              onClick={() => setShowCalendar({ ...showCalendar, checkIn: !showCalendar.checkIn })}
+              onClick={() =>
+                setShowCalendar((prev) => ({ ...prev, checkIn: !prev.checkIn }))
+              }
             />
             {showCalendar.checkIn && (
               <div className="calendar-dropdown">
                 <Calendar
                   onChange={(date) => {
                     setCheckInDate(date);
-                    setShowCalendar({ ...showCalendar, checkIn: false });
+                    setShowCalendar((prev) => ({ ...prev, checkIn: false }));
                   }}
-                  value={checkInDate}
+                  value={checkInDate || new Date()}
                 />
               </div>
             )}
           </div>
 
+          {/* Fecha Check-Out */}
           <div className="date-picker">
             <input
               type="text"
               readOnly
               placeholder="Check-Out"
-              value={checkOutDate.toLocaleDateString()}
+              value={checkOutDate ? checkOutDate.toLocaleDateString() : ""}
               className="search-input"
-              onClick={() => setShowCalendar({ ...showCalendar, checkOut: !showCalendar.checkOut })}
+              onClick={() =>
+                setShowCalendar((prev) => ({ ...prev, checkOut: !prev.checkOut }))
+              }
             />
             {showCalendar.checkOut && (
               <div className="calendar-dropdown">
                 <Calendar
                   onChange={(date) => {
                     setCheckOutDate(date);
-                    setShowCalendar({ ...showCalendar, checkOut: false });
+                    setShowCalendar((prev) => ({ ...prev, checkOut: false }));
                   }}
-                  value={checkOutDate}
+                  value={checkOutDate || new Date()}
                 />
               </div>
             )}
           </div>
 
-          <select value={guests} onChange={(e) => setGuests(e.target.value)} className="select-dropdown">
+          {/* Guests select con placeholder */}
+          <select
+            value={guests}
+            onChange={(e) => setGuests(parseInt(e.target.value))}
+            className="select-dropdown"
+          >
+            <option value="" disabled>
+              Huéspedes
+            </option>
             {[...Array(6).keys()].map((num) => (
-              <option key={num} value={num}>
-                {num} huésped(es)
+              <option key={num} value={num + 1}>
+                {num + 1} huésped(es)
               </option>
             ))}
           </select>
         </div>
 
-        <button className="search-button" onClick={handleClick}><strong>Buscar Hoteles</strong></button>
+        <button className="search-button" onClick={handleClick}>
+          <strong>Buscar Hoteles</strong>
+        </button>
       </div>
     </div>
   );
