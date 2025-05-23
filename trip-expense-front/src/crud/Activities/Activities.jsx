@@ -4,6 +4,7 @@ import "./Activities.css";
 import CreateActivityModal from "../../components/modals/CreateActivityModal"; 
 import EditActivityModal from "../../components/modals/EditActivityModal"; 
 import ConfirmModal from "../../components/modals/ConfirmModal"; 
+import { MdDelete, MdEdit } from "react-icons/md";
 
 const Activities = () => {
   const [activities, setActivities] = useState([]);
@@ -96,11 +97,11 @@ const Activities = () => {
                   <button className="edit-button" onClick={() => {
                     setActivityToEdit(activity); 
                     setEditModalOpen(true);
-                  }}>Editar</button>
+                  }}><MdEdit size={16}/></button>
                   <button className="delete-button" onClick={() => {
                     setActivityToDelete(activity.id); 
                     setDeleteModalOpen(true);
-                  }}>Eliminar</button>
+                  }}><MdDelete size={16}/></button>
                 </div>
               </div>
             </div>
