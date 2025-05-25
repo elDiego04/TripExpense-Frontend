@@ -12,7 +12,7 @@ import {
 } from "react-icons/fa";
 import "./Navbar.css";
 
-const HotelsNavbar = () => {
+const Navbar = () => {
   const navigate = useNavigate();
   const isAuthenticated = localStorage.getItem("user");
 
@@ -37,7 +37,6 @@ const HotelsNavbar = () => {
 
   return (
     <nav className="nav-container">
-      {/* NAV IZQUIERDA */}
       <div className="nav-items">
         {leftNavItems.map((item, index) => (
           <div
@@ -82,4 +81,4 @@ const HotelsNavbar = () => {
   );
 };
 
-export default HotelsNavbar;
+export default Navbar;
