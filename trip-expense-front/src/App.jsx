@@ -11,6 +11,8 @@ import FlightOptions from './pages/FlightOptions/FlightOptions.jsx';
 import AdminPage from './pages/adminPage/AdminPage.jsx'
 import UnauthorizedPage from './pages/unauthorizedPage/unauthorizedPage.jsx';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx';
+import CitiesPage from './pages/citiesPage/CitiesPage.jsx';
+import CityDetailsPage from './pages/cityDetailsPage/CityDetailsPage.jsx';
 
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
         <Route path="/home" element={<HotelsPage />} />
         <Route path="/hotels" element={<HotelsPage />} />
         <Route path="/flights" element={<FlightsPage />} />
+        <Route path="/cities" element={<CitiesPage />} />
+        <Route path="/cities/:cityId" element={<CityDetailsPage />} />
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/flights-options" element={<FlightOptions />} /> 
       </Routes>

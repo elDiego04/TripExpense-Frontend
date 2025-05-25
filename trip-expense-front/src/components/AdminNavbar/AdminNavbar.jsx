@@ -4,7 +4,7 @@ import "./AdminNavbar.css";
 import logo from "../../assets/LogoTripExpense1.jpg";
 import { FaSignOutAlt } from "react-icons/fa";
 
-const Navbar = ({ isAdmin = false }) => {
+const AdminNavbar = ({ isAdmin = false }) => {
   const navigate = useNavigate();
   const isAuthenticated = localStorage.getItem("user");
 
@@ -36,7 +36,7 @@ const Navbar = ({ isAdmin = false }) => {
           </>
         ) : (
           <button className="adminavabar-nav__logout__button" onClick={handleLogoutClick}>
-            <LuLogOut size={30} />
+            <FaSignOutAlt size={30} />
           </button>
         )}
       </div>
@@ -44,4 +44,4 @@ const Navbar = ({ isAdmin = false }) => {
   );
 };
 
-export default Navbar;
+export default AdminNavbar;

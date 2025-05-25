@@ -38,7 +38,6 @@ const SearchForm = () => {
             className="search-input"
           />
 
-          {/* Rooms select con placeholder */}
           <select
             value={rooms}
             onChange={(e) => setRooms(parseInt(e.target.value))}
@@ -54,7 +53,6 @@ const SearchForm = () => {
             ))}
           </select>
 
-          {/* Fecha Check-In */}
           <div className="date-picker">
             <input
               type="text"
@@ -79,7 +77,6 @@ const SearchForm = () => {
             )}
           </div>
 
-          {/* Fecha Check-Out */}
           <div className="date-picker">
             <input
               type="text"
@@ -104,7 +101,6 @@ const SearchForm = () => {
             )}
           </div>
 
-          {/* Guests select con placeholder */}
           <select
             value={guests}
             onChange={(e) => setGuests(parseInt(e.target.value))}
