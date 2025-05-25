@@ -1,35 +1,35 @@
-.places {
+.hotels {
   text-align: center;
   background-color: #404040;
   padding: 20px 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
   border-radius: 20px;
-  width: 97.5%;
+  max-width: 1400px;
+  margin-top: 60px;
 }
 
-.places-header {
+.hotels-header {
   margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 0;
 }
 
-.places-header h2 {
+.hotels-header h2 {
   margin: 0 0 10px;
   font-size: 28px;
   font-weight: bold;
   color: white;
 }
 
-.places-header p {
+.hotels-header p {
   margin: 0;
   color: whitesmoke;
   font-size: 16px;
 }
 
-.places-cards {
+.hotels-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
@@ -38,69 +38,69 @@
 }
 
 @media (max-width: 1200px) {
-  .places {
+  .hotels {
     width: 90%;
   }
 }
 
 @media (max-width: 992px) {
-  .places {
+  .hotels {
     width: 95%;
     padding: 20px 15px;
   }
 
-  .places-header {
+  .hotels-header {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 15px;
   }
 
-  .places-header h2,
-  .places-header p {
+  .hotels-header h2,
+  .hotels-header p {
     width: 100%;
   }
 
-  .places-grid {
+  .hotels-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
-  .places {
+  .hotels {
     width: 97%;
     padding: 15px 10px;
   }
 
-  .places-header h2 {
+  .hotels-header h2 {
     font-size: 24px;
   }
 
-  .places-header p {
+  .hotels-header p {
     font-size: 14px;
   }
 
-  .places-grid {
+  .hotels-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
   }
 }
 
 @media (max-width: 576px) {
-  .places {
+  .hotels {
     width: 100%;
     border-radius: 0;
   }
 
-  .places-header h2 {
+  .hotels-header h2 {
     font-size: 20px;
   }
 
-  .places-header p {
+  .hotels-header p {
     font-size: 13px;
   }
 
-  .places-grid {
+  .hotels-grid {
     grid-template-columns: 1fr;
     gap: 10px;
   }

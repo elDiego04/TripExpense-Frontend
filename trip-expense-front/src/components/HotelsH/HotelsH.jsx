@@ -1,7 +1,7 @@
 import React from "react";
 import HotelsCards from "../HotelsCards/HotelsCards.jsx";
 import { useNavigate } from "react-router-dom";
-import "./Hotels.css";
+import "./HotelsH.css";
 
 const hotels = [
     { city: "Nueva York, USA", img: "../assets/Newyork.jpg" },
@@ -19,11 +19,8 @@ const Hotels = () => {
     return (
         <section className="hotels">
             <div className="hotels-header">
-                <div className="hotels-text">
-                    <h2>Hoteles</h2>
-                    <p>Tu próxima aventura empieza con el hotel perfecto.</p>
-                </div>
-                <button className="hotels-button" onClick={handleSignupClick}><strong>Descubre más</strong></button>
+                <h2>Hoteles</h2>
+                <p>Tu próxima aventura empieza con el hotel perfecto.</p>
             </div>
             <div className="hotels-cards">
                 {hotels.map((destination, index) => (

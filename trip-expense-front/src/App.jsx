@@ -7,10 +7,12 @@ import SignUpPage from './pages/signUpPage/SignUpPage.jsx';
 import LandingPage from './pages/landingPage/LandingPage.jsx';
 import FlightsPage from './pages/flightsPage/FlightsPage.jsx';
 import HotelsPage from './pages/hotelsPage/HotelsPage.jsx';
-import FlightOptions from './pages/FlightOptions/FlightOptions.jsx'; 
+import FlightOptions from './pages/FlightOptions/FlightOptions.jsx';
 import AdminPage from './pages/adminPage/AdminPage.jsx'
 import UnauthorizedPage from './pages/unauthorizedPage/unauthorizedPage.jsx';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx';
+import HotelOptions from './pages/hotelOptions/HotelOptions.jsx';
+import HotelView from './pages/hotelsView/HotelsView.jsx';
 
 
 function App() {
@@ -28,12 +30,14 @@ function App() {
             <ProtectedRoute allowedRole="ADMIN">
               <AdminPage />
             </ProtectedRoute>
-        }/>
+          } />
         <Route path="/home" element={<HotelsPage />} />
         <Route path="/hotels" element={<HotelsPage />} />
         <Route path="/flights" element={<FlightsPage />} />
         <Route path="*" element={<Navigate to="/" />} />
-        <Route path="/flights-options" element={<FlightOptions />} /> 
+        <Route path="/flights-options" element={<FlightOptions />} />
+        <Route path="/hotels-options" element={<HotelOptions />} />
+        <Route path="/hotels-view" element={<HotelView />} />
       </Routes>
     </BrowserRouter>
   );
