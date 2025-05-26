@@ -1,66 +1,35 @@
 import React, { useState } from "react";
-import FiltersSidebar from '../../components/FiltersSidebar/FiltersSidebar';
-import FlightsCardOpt from "../../components/FlightCardOpt/FlightsCardOpt";
-import Navbar from "../../components/Navbar/Navbar";
 import "./HotelOptions.css";
+import Navbar from "../../components/Navbar/Navbar";
+import FiltersHotels from '../../components/FiltersHotels/FiltersHotels';
+import HotelsCardOpt from "../../components/HotelsCardOpt/HotelsCardOpt";
 
 const HotelOptions = () => {
-  const [flights, setFlights] = useState([
+  const [hotels, setFlights] = useState([
     {
       id: 1,
-      airline: "Emirates",
-      rating: 4.2,
-      reviews: 54,
-      price: 104,
-      time: "12:00 pm - 01:28 pm",
-      duration: "2h 28m",
-      route: "EWR - BNA",
-    },
-    {
-      id: 2,
-      airline: "Fly Dubai",
-      rating: 4.2,
-      reviews: 54,
-      price: 104,
-      time: "12:00 pm - 01:28 pm",
-      duration: "2h 28m",
-      route: "EWR - BNA",
-    },
-    {
-      id: 3,
-      airline: "Qatar",
-      rating: 4.2,
-      reviews: 54,
-      price: 104,
-      time: "12:00 pm - 01:28 pm",
-      duration: "2h 28m",
-      route: "EWR - BNA",
-    },
-    {
-      id: 4,
-      airline: "Etihad",
-      rating: 4.2,
-      reviews: 54,
-      price: 104,
-      time: "12:00 pm - 01:28 pm",
-      duration: "2h 28m",
-      route: "EWR - BNA",
+      hotelName: 'HotelName',
+      description: 'HotelDescription',
+      country: 'Country',
+      city: 'City',
+      stars: 5,
+      price: 129,
     },
   ]);
 
   return (
-    <div className="flight-options-container">
-      <div className="flight-options-navbar">
+    <div className="fo-container">
+      <div className="fo-navbar">
         <Navbar />
       </div>
-      <div className="flight-options-content">
-        <FiltersSidebar />
-        <div className="flight-options-results">
+      <div className="fo-content">
+        <FiltersHotels />
+        <div className="fo-results">
 
-          {flights.map((flight) => (
-            <FlightsCardOpt key={flight.id} flight={flight} />
+          {hotels.map((hotel) => (
+            <HotelsCardOpt key={hotel.id} hotels={hotel} />
           ))}
-          <button className="flight-options-show-more">Ver más resultados</button>
+          <button className="fo-show-more">Ver más resultados</button>
         </div>
       </div>
     </div>
