@@ -17,7 +17,8 @@ import HotelOptions from './pages/hotelOptions/HotelOptions.jsx';
 import HotelsViews from './pages/hotelsViews/HotelsViews.jsx';
 import CitiesPage from './pages/citiesPage/CitiesPage.jsx';
 import CityDetailsPage from './pages/cityDetailsPage/CityDetailsPage.jsx';
-
+import ActivitiesPage from './pages/activitiesPage/ActivitiesPage.jsx';
+import ActivitiesDetailsPage from './pages/activitiesDetailsPage/ActivitiesDetailsPage.jsx';
 
 function App() {
   return (
@@ -40,6 +41,8 @@ function App() {
         <Route path="/flights" element={<FlightsPage />} />
         <Route path="/cities" element={<CitiesPage />} />
         <Route path="/cities/:cityId" element={<CityDetailsPage />} />
+        <Route path="/activities" element={<ActivitiesPage />} />
+        <Route path="/activities/:activityId" element={<ActivitiesDetailsPage />} />
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/flights-options" element={<FlightOptions />} />
         <Route path="/hotels-options" element={<HotelOptions />} />
