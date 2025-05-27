@@ -74,7 +74,7 @@ const Hotels = () => {
         ) : (
           hotels.map((hotel) => (
             <div className="hotel-card" key={hotel.id}>
-              <img src={hotel.image || "https://via.placeholder.com/300"} alt={hotel.name} className="hotel-image" />
+              <img src={hotel.image || "../../../assets/London.jpg"} alt={hotel.name} className="hotel-image" />
               <div className="hotel-info">
                 <h3>{hotel.name}</h3>
                 <p><strong>Ciudad:</strong> {hotel.city}</p>

@@ -15,9 +15,7 @@ const SearchForm = () => {
 
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate("/signup");
-  };
+  
 
   return (
     <div className="search-container">
@@ -117,7 +115,7 @@ const SearchForm = () => {
           </select>
         </div>
 
-        <button className="search-button" onClick={handleClick}>
+        <button className="search-button">
           <strong>Buscar Hoteles</strong>
         </button>
       </div>

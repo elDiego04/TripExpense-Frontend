@@ -6,7 +6,7 @@ const FlightsCard = ({ city, img }) => {
     const navigate = useNavigate();
 
     const handleSignupClick = () => {
-        navigate("/signup");
+        navigate("/flights-options");
     };
     return (
         <div className="fc-card">

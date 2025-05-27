@@ -11,7 +11,7 @@ const CitiesCard = ({ cityId, name, country, imageUrl }) => {
 
   return (
     <div className="cp-card">
-      <img src={imageUrl} alt={name} className="cp-image" />
+      <img src={imageUrl || "../../../assets/Sidney.jpg"} alt={name} className="cp-image" />
       <div className="cp-content">
         <h3>{name}, {country}</h3>
         <button className="cp-button" onClick={handleExploreCityClick}>

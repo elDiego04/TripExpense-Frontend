@@ -96,7 +96,7 @@ const Activities = () => {
         ) : (
           activities.map((activity) => (
             <div className="activity-card" key={activity.id}>
-              <img src={activity.image || "https://via.placeholder.com/300"} alt={activity.name} className="activity-image" />
+              <img src={activity.image || "../../../assets/Newyork.jpg"} alt={activity.name} className="activity-image" />
               <div className="activity-info">
                 <h3>{activity.name}</h3>
                 <p><strong>Ciudad:</strong> {getCityName(activity.cityId)}</p>

@@ -7,9 +7,9 @@
 
 .users-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  flex-direction: column;
 }
 
 .users-header .users-title {

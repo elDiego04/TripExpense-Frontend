@@ -75,7 +75,7 @@ const Packages = () => {
           packages.map((pkg) => (
             <div className="package-card" key={pkg.id}>
               <img
-                src={pkg.image || "https://via.placeholder.com/300"}
+                src={pkg.image || "../../../assets/Maldives.jpg"}
                 alt={pkg.name}
                 className="package-image"
               />
