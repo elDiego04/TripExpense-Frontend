@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 const hotelsCard = ({ city, img }) => {
     const navigate = useNavigate();
 
-    const handleSignupClick = () => {
-        navigate("/signup");
+    const handleHotelsViewClick = () => {
+        navigate("/hotels-view");
     };
     return (
         <div className="hc-card">
@@ -14,7 +14,7 @@ const hotelsCard = ({ city, img }) => {
             <div className="hc-content">
                 <h3>{city}</h3>
                 <p>WIFI • Piscina • Restaurantes</p>
-                <button className="hc-button" onClick={handleSignupClick}><strong>Ver hotel</strong></button>
+                <button className="hc-button" onClick={handleHotelsViewClick}><strong>Ver hotel</strong></button>
             </div>
         </div>
     );

@@ -1,0 +1,60 @@
+.hotel-section {
+    background-color: #f0f8ff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hotel-image {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 15px;
+}
+
+.hotel-stars {
+    color: black;
+}
+
+.hotel-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.hotel-description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.hotel-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.hotel-old-price {
+    font-size: 13px;
+    text-decoration: line-through;
+    color: #e91e63;
+    margin-bottom: 4px;
+}
+
+.reserve-button {
+    background-color: #E38C4D;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.reserve-button:hover {
+    background-color: #CC7433;
+}

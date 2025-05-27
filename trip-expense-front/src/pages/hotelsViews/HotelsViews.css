@@ -1,0 +1,12 @@
+.hv-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #404040;
+}
+
+.hv-content {
+    margin-top: 60px;
+}

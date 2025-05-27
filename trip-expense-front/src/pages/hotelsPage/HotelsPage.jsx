@@ -3,7 +3,7 @@ import HotelsNavbar from "../../components/HotelsNavbar/HotelsNavbar";
 import HotelsHero from "../../components/HotelsHero/HotelsHero";
 import HotelsSearch from "../../components/HotelsSearch/HotelsSearch";
 import HotelsPlaces from "../../components/HotelsPlaces/HotelsPlaces";
-import Hotels from "../../components/Hotels/Hotels"
+import Hotels from "../../components/HotelsH/HotelsH"
 import "./HotelsPage.css"
 
 const HotelsPage = () => {
