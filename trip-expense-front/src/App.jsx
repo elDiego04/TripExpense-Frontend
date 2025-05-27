@@ -11,6 +11,8 @@ import FlightOptions from './pages/FlightOptions/FlightOptions.jsx';
 import AdminPage from './pages/adminPage/AdminPage.jsx'
 import UnauthorizedPage from './pages/unauthorizedPage/unauthorizedPage.jsx';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx';
+import CitiesPage from './pages/citiesPage/CitiesPage.jsx';
+import CityDetailsPage from './pages/cityDetailsPage/CityDetailsPage.jsx';
 import HotelOptions from './pages/hotelOptions/HotelOptions.jsx';
 import HotelsViews from './pages/hotelsViews/HotelsViews.jsx';
 import CitiesPage from './pages/citiesPage/CitiesPage.jsx';
