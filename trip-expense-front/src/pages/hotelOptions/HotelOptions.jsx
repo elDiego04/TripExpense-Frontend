@@ -18,18 +18,17 @@ const HotelOptions = () => {
   ]);
 
   return (
-    <div className="fo-container">
-      <div className="fo-navbar">
-        <Navbar />
-      </div>
-      <div className="fo-content">
-        <FiltersHotels />
-        <div className="fo-results">
-
+    <div className="ho-container">
+      <Navbar className="navbar" />
+      <div className="ho-content">
+        <div className="ho-sidebar">
+          <FiltersHotels />
+        </div>
+        <div className="ho-results">
           {hotels.map((hotel) => (
             <HotelsCardOpt key={hotel.id} hotels={hotel} />
           ))}
-          <button className="fo-show-more">Ver más resultados</button>
+          <button className="ho-show-more">Ver más resultados</button>
         </div>
       </div>
     </div>

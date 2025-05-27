@@ -12,7 +12,7 @@ import AdminPage from './pages/adminPage/AdminPage.jsx'
 import UnauthorizedPage from './pages/unauthorizedPage/unauthorizedPage.jsx';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx';
 import HotelOptions from './pages/hotelOptions/HotelOptions.jsx';
-import HotelView from './pages/hotelsView/HotelsView.jsx';
+import HotelsViews from './pages/hotelsViews/HotelsViews.jsx';
 
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/flights-options" element={<FlightOptions />} />
         <Route path="/hotels-options" element={<HotelOptions />} />
-        <Route path="/hotels-view" element={<HotelView />} />
+        <Route path="/hotels-view" element={<HotelsViews />} />
       </Routes>
     </BrowserRouter>
   );

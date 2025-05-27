@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './HotelsCardOpt.css';
+import { useNavigate } from "react-router-dom";
 import ImgH1 from '../../assets/ImgHotel1.jpg';
 import ImgH2 from '../../assets/ImgHotel2.jpg';
 import ImgH3 from '../../assets/ImgHotel3.jpg';
@@ -10,6 +11,12 @@ import ImgH7 from '../../assets/ImgHotel7.jpg';
 import ImgH8 from '../../assets/ImgHotel8.jpg';
 
 const HotelsCardOpt = () => {
+  const navigate = useNavigate();
+
+  const handleHotelsViewClick = () => {
+    navigate("/hotels-view");
+  };
+
   const [hotels, setHotels] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -115,46 +122,44 @@ const HotelsCardOpt = () => {
     fetchHotels();
   }, []);
 
-  if (loading) return <div className="flights-options-loading">Cargando hoteles...</div>;
-  if (error) return <div className="flights-options-error">⚠️ {error}</div>;
+  if (loading) return <div className="hco-loading">Cargando hoteles...</div>;
+  if (error) return <div className="hco-error">⚠️ {error}</div>;
 
   return (
     <>
       {hotels.map((hotel) => (
-        <div className="flights-options-card" key={hotel.id}>
-          <div className="flights-options-card-left">
+        <div className="hco-card" key={hotel.id}>
+          <div className="hco-card-left">
             <img
               src={hotel.hotelImageUrl || '/default-logo.png'}
               alt={hotel.hotelName}
-              className="flights-options-logo"
+              className="hco-logo"
             />
-            <div>
-              <h2 className="flights-options-airline">{hotel.hotelName}</h2>
-              <p className="flights-options-number">Hotel en {hotel.city}, {hotel.country}</p>
-            </div>
           </div>
 
-          <div className="flights-options-card-center">
-            <div className="flights-options-section">
-              <div className="flights-options-label">Estrellas</div>
-              <p className="flights-options-info">
-                {hotel.stars} <br />
-              </p>
+          <div className="hco-card-center">
+            <div>
+              <h2 className="hco-name">{hotel.hotelName}</h2>
+              <p className="hco-place">📍 Hotel en {hotel.city}, {hotel.country}</p>
             </div>
-
-            <div className="flights-options-section">
-              <div className="flights-options-label">Descripcion</div>
-              <p className="flights-options-info">
+            <div className="hco-section">
+              <p className="hco-description">
                 {hotel.description} <br />
               </p>
             </div>
 
-            <div className="flights-options-duration">1 noche, 2 adutos</div>
+            <div className="hco-duration">1 noche, 2 adutos</div>
           </div>
 
-          <div className="flights-options-card-right">
-            <div className="flights-options-price">${hotel.price} USD</div>
-            <button className="flights-options-btn">Ver hotel</button>
+          <div className="hco-card-right">
+            <div className="hco-section">
+              <div className="hco-stars">{"★".repeat(hotel.stars)}</div>
+            </div>
+            <div>
+              <div className="hco-old-price">${(hotel.price * 1.3).toFixed(0)} USD</div>
+              <div className="hco-price">${hotel.price} USD</div>
+            </div>
+            <button className="hco-btn" onClick={handleHotelsViewClick}>Ver hotel</button>
           </div>
         </div>
       ))}

@@ -16,11 +16,10 @@ const FiltersHotels = () => {
       stars,
     };
     console.log(filters);
-    // Aquí puedes pasar los filtros al componente padre vía props o contexto.
   };
 
   return (
-    <aside className="filters-sidebar">
+    <>
       <h3 className="fs-title">Filtros de hoteles</h3>
       <form onSubmit={handleSubmit} className="fs-form">
 
@@ -62,7 +61,7 @@ const FiltersHotels = () => {
           <input
             type="number"
             id="stars"
-            checked={stars}
+            value={stars}
             onChange={(e) => setStars(e.target.value)}
             placeholder="Ej: 3"
           />
@@ -72,7 +71,7 @@ const FiltersHotels = () => {
           Aplicar filtros
         </button>
       </form>
-    </aside>
+    </>
   );
 };
 
