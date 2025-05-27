@@ -1,4 +1,3 @@
-// FlightsHotels.js
 import React from "react";
 import "./FlightsHotels.css";
 import { useNavigate } from "react-router-dom";

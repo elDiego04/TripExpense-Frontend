@@ -4,6 +4,7 @@ import "./Users.css";
 import CreateUserModal from "../../components/modals/CreateUserModal"; 
 import EditUserModal from "../../components/modals/EditUserModal"; 
 import ConfirmModal from "../../components/modals/ConfirmModal"; 
+import { MdDelete, MdEdit } from "react-icons/md";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -73,10 +74,9 @@ const Users = () => {
         ) : (
           users.map((user) => (
             <div className="user-card" key={user.id}>
-              <img src={user.image || "https://via.placeholder.com/300"} alt={`${user.firstName} ${user.lastName}`} className="user-image" />
+              <img src={user.image || "../../../assets/FotoPerfil1.png"} alt={`${user.firstName} ${user.lastName}`} className="user-image" />
               <div className="user-info">
                 <h3>{user.firstName} {user.lastName}</h3>
-                <p><strong>ID:</strong> {user.id}</p>
 
                 {expandedCard === user.id && (
                   <div className="extra-info">
@@ -92,11 +92,11 @@ const Users = () => {
                   <button className="edit-button" onClick={() => {
                     setUserToEdit(user); 
                     setEditModalOpen(true);
-                  }}>Editar</button>
+                  }}><MdEdit size={16}/></button>
                   <button className="delete-button" onClick={() => {
                     setUserToDelete(user.id); 
                     setDeleteModalOpen(true);
-                  }}>Eliminar</button>
+                  }}><MdDelete size={16}/></button>
                 </div>
               </div>
             </div>

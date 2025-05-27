@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import Navbar from "../../components/Navbar/Navbar";
+import AdminNavbar from "../../components/AdminNavbar/AdminNavbar";
 import Cities from "../../crud/Cities/Cities";
 import Hotels from "../../crud/Hotels/Hotels";
 import Flights from "../../crud/Flights/Flights";
@@ -35,7 +35,7 @@ const AdminPage = () => {
     <div className="admin-layout">
       <Sidebar setActiveSection={setActiveSection} activeSection={activeSection} />
       <div className="admin-content-area">
-        <Navbar isAdmin={true}/>
+        <AdminNavbar isAdmin={true}/>
         <div className="admin-content">{renderContent()}</div>
       </div>
     </div>

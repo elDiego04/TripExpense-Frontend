@@ -1,0 +1,175 @@
+.cp-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  width: 250px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.cp-card:hover {
+  transform: translateY(-5px);
+}
+
+.cp-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cp-content {
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.cp-content h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.cp-button {
+  background-color: #E38C4D;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: white;
+  font-size: 16px;
+}
+
+.cp-button:hover {
+  background-color: #CC7433;
+}
+
+@media (max-width: 1440px) {
+  .cp-card {
+    width: 260px;
+    height: 330px;
+    padding: 14px;
+  }
+
+  .cp-image {
+    height: 145px;
+  }
+
+  .cp-content h3 {
+    font-size: 17px;
+  }
+
+  .cp-button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cp-card {
+    width: 230px;
+    height: 300px;
+    padding: 13px;
+  }
+
+  .cp-image {
+    height: 140px;
+  }
+
+  .cp-content h3 {
+    font-size: 16px;
+  }
+
+  .cp-button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cp-card {
+    width: 210px;
+    height: 290px;
+    padding: 12px;
+  }
+
+  .cp-image {
+    height: 130px;
+  }
+
+  .cp-content h3 {
+    font-size: 15px;
+  }
+
+  .cp-button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cp-card {
+    width: 50px;
+    height: auto;
+    padding: 12px;
+  }
+
+  .cp-image {
+    height: 140px;
+  }
+
+  .cp-content h3 {
+    font-size: 15px;
+  }
+
+  .cp-button {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .cp-card {
+    width: 250px;
+    height: 320px;
+    padding: 10px;
+  }
+
+  .cp-image {
+    height: 120px;
+  }
+
+  .cp-content h3 {
+    font-size: 14px;
+  }
+
+  .cp-button {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .cp-card {
+    padding: 8px;
+  }
+
+  .cp-image {
+    height: 110px;
+  }
+
+  .cp-content h3 {
+    font-size: 13px;
+  }
+
+  .cp-button {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

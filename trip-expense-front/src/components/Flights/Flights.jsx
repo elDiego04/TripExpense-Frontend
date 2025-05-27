@@ -14,17 +14,13 @@ const flights = [
 const Flights = () => {
     const navigate = useNavigate();
 
-    const handleSignupClick = () => {
-        navigate("/signup");
-    };
     return (
         <section className="flights">
             <div className="flights-header">
-                <div className="flights-text">
                     <h2>Vuelos</h2>
                     <p>Tu próxima aventura empieza con el vuelo perfecto.</p>
-                </div>
-                <button className="flights-button" onClick={handleSignupClick}><strong>Descubre más</strong></button>
+                
+                
             </div>
             <div className="flights-cards">
                 {flights.map((destination, index) => (

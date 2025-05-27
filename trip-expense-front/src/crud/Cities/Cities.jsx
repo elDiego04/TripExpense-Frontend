@@ -4,6 +4,7 @@ import "./Cities.css";
 import CreateCityModal from "../../components/modals/CreateCityModal";
 import EditCityModal from "../../components/modals/EditCityModal";
 import ConfirmModal from "../../components/modals/ConfirmModal";
+import { MdDelete, MdEdit } from "react-icons/md";
 
 const Cities = () => {
   const [cities, setCities] = useState([]);
@@ -73,7 +74,7 @@ const Cities = () => {
         ) : (
           cities.map((city) => (
             <div key={city.cityId} className="city-card">
-              <img src={city.image || "https://via.placeholder.com/300"} alt={city.name} className="city-image" />
+              <img src={city.image || "../../../assets/Tokyo.jpg"} alt={city.name} className="city-image" />
               <div className="city-info">
                 <h3>{city.name}</h3>
                 <p><strong>País:</strong> {city.country}</p>
@@ -95,11 +96,11 @@ const Cities = () => {
                   <button className="edit-button" onClick={() => {
                     setCityToEdit(city);
                     setEditModalOpen(true);
-                  }}>Editar</button>
+                  }}><MdEdit size={16}/></button>
                   <button className="delete-button" onClick={() => {
                     setCityToDelete(city.cityId); 
                     setDeleteModalOpen(true);
-                  }}>Eliminar</button>
+                  }}><MdDelete size={16}/></button>
                 </div>
               </div>
             </div>

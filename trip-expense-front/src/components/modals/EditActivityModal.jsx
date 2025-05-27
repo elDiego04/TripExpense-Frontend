@@ -14,7 +14,7 @@ const categories = [
   'Educativa',
 ];
 
-const difficulties = ['Fácil', 'Media', 'Difícil'];
+const difficultyLevel = ['Fácil', 'Media', 'Difícil'];
 
 const EditActivityModal = ({ isOpen, onClose, onUpdate, activityToEdit }) => {
   const [cities, setCities] = useState([]);
@@ -47,7 +47,7 @@ const EditActivityModal = ({ isOpen, onClose, onUpdate, activityToEdit }) => {
         setValue('category', activityToEdit.category || '');
         setValue('duration', activityToEdit.duration || '');
         setValue('location', activityToEdit.location || '');
-        setValue('difficulty', activityToEdit.difficulty || '');
+        setValue('difficultyLevel', activityToEdit.difficultyLevel || '');
         setValue('price', activityToEdit.price || '');
         setImageFile(null);
       }
@@ -155,11 +155,11 @@ const EditActivityModal = ({ isOpen, onClose, onUpdate, activityToEdit }) => {
             <label>
               Dificultad:
               <select
-                {...register('difficulty', { required: 'La dificultad es obligatoria' })}
+                {...register('difficultyLevel', { required: 'La dificultad es obligatoria' })}
                 defaultValue=""
               >
                 <option value="" disabled>Selecciona una dificultad</option>
-                {difficulties.map((d) => (
+                {difficultyLevel.map((d) => (
                   <option key={d} value={d}>{d}</option>
                 ))}
               </select>
@@ -170,7 +170,7 @@ const EditActivityModal = ({ isOpen, onClose, onUpdate, activityToEdit }) => {
                 Precio:
                 <input
                 type="number"
-                step="1"
+                step="0.01"
                 {...register("price", {
                     required: "El precio es obligatorio",
                     valueAsNumber: true,

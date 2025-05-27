@@ -12,27 +12,51 @@ const CreateHotelModal = ({ isOpen, onClose, onCreate }) => {
   const { register, handleSubmit, setValue, reset, formState: { errors } } = useForm();
 
   useEffect(() => {
-    const fetchCities = async () => {
-      try {
-        const res = await api.get('/cities');
-        setCities(res.data);
-      } catch (error) {
-        console.error('Error al cargar ciudades:', error);
-      }
-    };
-    fetchCities();
-  }, []);
+    if (isOpen) {
+      // Carga ciudades SOLO al abrir modal
+      const fetchCities = async () => {
+        try {
+          const res = await api.get('/cities');
+          setCities(res.data);
+        } catch (error) {
+          console.error('Error al cargar ciudades:', error);
+        }
+      };
+
+      fetchCities();
+      reset(); // resetear formulario cada vez que se abre el modal
+      setImagePreview(''); // limpiar preview imagen
+      setValue('imageUrl', ''); // limpiar url en formulario
+    }
+  }, [isOpen, reset, setValue]);
 
   const onSubmit = async (data) => {
     try {
+      console.log('Datos recibidos del formulario (antes de cambios):', data);
+
+      // Convertir tipos
       data.stars = parseInt(data.stars);
+      // Importante: city debe enviarse como objeto con id para evitar "The given id must not be null"
+      data.cityId  = parseInt(data.cityId);
+
+      console.log('Datos preparados para enviar al backend:', data);
+
       const response = await api.post('/hotels', data);
+      console.log('Respuesta backend:', response.data);
+
       onCreate(response.data);
+
       reset();
       setImagePreview('');
       onClose();
     } catch (err) {
       console.error('Error al crear hotel:', err);
+
+      if (err.response) {
+        console.error('Error response data:', err.response.data);
+        console.error('Error response status:', err.response.status);
+        console.error('Error response headers:', err.response.headers);
+      }
     }
   };
 
@@ -41,7 +65,7 @@ const CreateHotelModal = ({ isOpen, onClose, onCreate }) => {
     if (file) {
       const url = URL.createObjectURL(file);
       setImagePreview(url);
-      setValue('imageUrl', url);
+      setValue('imageUrl', url); // Actualizar campo hidden con URL
     }
   };
 
@@ -61,7 +85,7 @@ const CreateHotelModal = ({ isOpen, onClose, onCreate }) => {
 
           <div className="create-hotel-form-group">
             <label>Ciudad:</label>
-            <select {...register('city', { required: 'La ciudad es obligatoria' })} defaultValue="">
+            <select {...register('cityId ', { required: 'La ciudad es obligatoria' })} defaultValue="">
               <option value="" disabled>Seleccione una ciudad</option>
               {cities.map(city => (
                 <option key={city.cityId} value={city.cityId}>{city.name}</option>
@@ -78,7 +102,7 @@ const CreateHotelModal = ({ isOpen, onClose, onCreate }) => {
 
           <div className="create-hotel-form-group create-hotel-image-file">
             <label>Imagen:</label>
-            <input type="file" onChange={handleImageChange} />
+            <input type="file" onChange={handleImageChange} accept="image/*" />
             {imagePreview && <img src={imagePreview} alt="Vista previa" style={{ width: '100px' }} />}
           </div>
 
