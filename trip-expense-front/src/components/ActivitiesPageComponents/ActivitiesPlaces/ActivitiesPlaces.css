@@ -6,7 +6,7 @@
   border-radius: 20px;
   width: 90%;
   max-width: 1200px;
-  transform: translateY(15%);
+  transform: translateY(0);
   margin: 0 auto;
 }
 
@@ -90,9 +90,12 @@
 
 @media (max-width: 576px) {
   .ap-places {
-    width: auto;
-    border-radius: 0;
-    transform: translateY(80px);
+    width: 98%;
+    padding: 15px 10px;
+    margin: 0 auto;
+    border-radius: 20px; 
+    transform: translateY(20px);
+    box-sizing: border-box;
   }
 
   .ap-places-header h2 {

@@ -14,12 +14,21 @@ const Activities = () => {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [activityToDelete, setActivityToDelete] = useState(null);
   const [activityToEdit, setActivityToEdit] = useState(null); 
+  const [cities, setCities] = useState([]);
+
+  const getCityName = (cityId) => {
+    if (!cityId) return "Ciudad desconocida";
+    const city = cities.find((c) => c.cityId === cityId);
+    return city ? city.name : "Ciudad desconocida";
+  };
 
   useEffect(() => {
     const fetchActivities = async () => {
       try {
         const res = await api.get("/activities"); 
         const activitiesArray = Array.isArray(res.data) ? res.data : res.data.data;  
+        console.log(res.data)
+        console.log(res.data.data)
         setActivities(activitiesArray || []);  
       } catch (error) {
         console.error("Error al obtener actividades:", error);
@@ -28,6 +37,19 @@ const Activities = () => {
     };
 
     fetchActivities();
+  }, []);
+
+   useEffect(() => {
+   const fetchCities = async () => {
+      try {
+        const res = await api.get("/cities");
+        setCities(res.data);
+        console.log(res.data);
+      } catch (error) {
+        console.error("Error al obtener ciudades:", error);
+      }
+    };
+    fetchCities();
   }, []);
 
   const handleCreate = (newActivity) => {
@@ -77,7 +99,7 @@ const Activities = () => {
               <img src={activity.image || "https://via.placeholder.com/300"} alt={activity.name} className="activity-image" />
               <div className="activity-info">
                 <h3>{activity.name}</h3>
-                <p><strong>Ciudad:</strong> {activity.city}</p>
+                <p><strong>Ciudad:</strong> {getCityName(activity.cityId)}</p>
 
                 {expandedCard === activity.id && (
                   <div className="extra-info">
@@ -85,7 +107,7 @@ const Activities = () => {
                     <p><strong>Descripción:</strong> {activity.description}</p>
                     <p><strong>Duración:</strong> {activity.duration}</p>
                     <p><strong>Ubicación:</strong> {activity.location}</p>
-                    <p><strong>Dificultad:</strong> {activity.difficulty}</p>
+                    <p><strong>Dificultad:</strong> {activity.difficultyLevel}</p>
                     <p><strong>Precio:</strong> {activity.price}</p>
                   </div>
                 )}

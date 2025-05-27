@@ -39,16 +39,22 @@ const CreateActivityModal = ({ isOpen, onClose, onCreate }) => {
 
     if (isOpen) {
       fetchCities();
-      reset(); 
+      reset();
     }
   }, [isOpen, reset]);
 
   const onSubmit = async (data) => {
     try {
       const payload = {
-        ...data,
+        name: data.name,
+        cityId: parseInt(data.cityId, 10),
+        description: data.description,
+        category: data.category,
         duration: parseInt(data.duration, 10),
-        image: imageFile ? URL.createObjectURL(imageFile) : '',
+        location: data.location,
+        difficultyLevel: data.difficulty, 
+        price: parseFloat(data.price),
+        imageUrl: imageFile ? URL.createObjectURL(imageFile) : null,
       };
 
       const res = await api.post('/activities', payload);
@@ -58,6 +64,7 @@ const CreateActivityModal = ({ isOpen, onClose, onCreate }) => {
       console.error('Error al crear la actividad:', error);
     }
   };
+
 
   return (
     isOpen && (
@@ -82,7 +89,7 @@ const CreateActivityModal = ({ isOpen, onClose, onCreate }) => {
               >
                 <option value="" disabled>Selecciona una ciudad</option>
                 {cities.map((city) => (
-                  <option key={city.id} value={city.id}>{city.name}</option>
+                  <option key={city.cityId} value={city.cityId}>{city.name}</option>
                 ))}
               </select>
               {errors.cityId && <span className="create-activity-error">{errors.cityId.message}</span>}
@@ -156,17 +163,17 @@ const CreateActivityModal = ({ isOpen, onClose, onCreate }) => {
             </label>
 
             <label>
-                Precio:
-                <input
+              Precio:
+              <input
                 type="number"
-                step="1"
+                step="0.01"
                 {...register("price", {
-                    required: "El precio es obligatorio",
-                    valueAsNumber: true,
-                    min: { value: 0, message: "El precio debe ser positivo" },
+                  required: "El precio es obligatorio",
+                  valueAsNumber: true,
+                  min: { value: 0, message: "El precio debe ser positivo" },
                 })}
-                />
-                {errors.price && <p className="create-activity-error">{errors.price.message}</p>}
+              />
+              {errors.price && <p className="create-activity-error">{errors.price.message}</p>}
             </label>
 
             <div className="create-activity-modal-actions">

@@ -14,7 +14,7 @@ const ActivitiesCard = ({ activityId, name, imageUrl, cityName }) => {
       <img src={imageUrl} alt={name} className="ap-card-img" />
       <div className="ap-card-body">
         <h3 className="ap-card-title">{name}</h3>
-        <p className="ap-card-city">{cityName}</p>
+        <p className="ap-card-city"><strong>{cityName}</strong></p>
         <button onClick={handleClick} className="ap-card-button">
           Ver más
         </button>
