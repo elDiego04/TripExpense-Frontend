@@ -1,0 +1,156 @@
+.adminavabar-navbar {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  height: 20px;
+  padding: 20px 20px;
+  z-index: 1000;
+}
+
+.adminavabar-navbar__logo {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.adminavabar-navbar__logo img {
+  height: 60px;
+  width: auto;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.adminavabar-nav__buttons {
+  position: absolute;
+  right: 20.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.adminavabar-nav__login__button,
+.adminavabar-nav__logout__button {
+  color: #E38C4D;
+  background: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.adminavabar-nav__login__button:hover,
+.adminavabar-nav__logout__button:hover {
+  background-color: whitesmoke;
+}
+
+.adminavabar-nav__signup__button {
+  background-color: white;
+  color: black;
+  padding: 8px 15px;
+  font-size: 16px;
+  border: 1px solid #404040;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.adminavabar-nav__signup__button:hover {
+  background-color: #e6e6e6;
+}
+
+.adminavabar-admin-navbar {
+  width: calc(100% - 300px); 
+  margin-left: 0;
+  justify-content: flex-start;
+  padding-left: 5px;
+}
+
+.adminavabar-admin-navbar .adminavabar-navbar__logo {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .adminavabar-navbar {
+    padding: 10px 15px;
+  }
+
+  .adminavabar-navbar__logo {
+    left: 15px;
+    transform: translateX(0);
+  }
+
+  .adminavabar-navbar__logo img {
+    height: 30px;
+  }
+
+  .adminavabar-nav__buttons {
+    right: 20.5px;
+    gap: 10px;
+  }
+
+  .adminavabar-nav__login__button,
+  .adminavabar-nav__logout__button {
+    font-size: 14px;
+    padding: 7px 13px;
+  }
+
+  .adminavabar-nav__signup__button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .adminavabar-navbar {
+    padding: 10px 10px;
+    height: 15px;
+  }
+
+  .adminavabar-navbar__logo {
+    left: 10px;
+  }
+
+  .adminavabar-navbar__logo img {
+    height: 25px;
+  }
+
+  .adminavabar-nav__buttons {
+    gap: 5px;
+    right: 10px;
+  }
+
+  .adminavabar-nav__login__button,
+  .adminavabar-nav__signup__button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .adminavabar-navbar__logo {
+    left: 8px;
+  }
+
+  .adminavabar-navbar__logo img {
+    height: 22px;
+  }
+
+  .adminavabar-nav__buttons {
+    gap: 3px;
+  }
+
+  .adminavabar-nav__login__button,
+  .adminavabar-nav__signup__button {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+}

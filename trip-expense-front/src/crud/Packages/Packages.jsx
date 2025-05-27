@@ -4,6 +4,7 @@ import "./Packages.css";
 import CreatePackageModal from "../../components/modals/CreatePackageModal";
 import EditPackageModal from "../../components/modals/EditPackageModal";
 import ConfirmModal from "../../components/modals/ConfirmModal";
+import { MdDelete, MdEdit } from "react-icons/md";
 
 const Packages = () => {
   const [packages, setPackages] = useState([]);
@@ -110,7 +111,7 @@ const Packages = () => {
                       setEditModalOpen(true);
                     }}
                   >
-                    Editar
+                    <MdEdit size={16}/>
                   </button>
                   <button
                     className="delete-button"
@@ -119,7 +120,7 @@ const Packages = () => {
                       setDeleteModalOpen(true);
                     }}
                   >
-                    Eliminar
+                    <MdDelete size={16}/>
                   </button>
                 </div>
               </div>

@@ -39,7 +39,7 @@ const LoginPage = () => {
     if (!password.trim()) {
       setPasswordError("* La contraseña es obligatoria");
       valid = false;
-    } else if (password.length < 6) {
+    } else if (password.length < 7) {
       setPasswordError("* La contraseña debe tener al menos 6 caracteres");
       valid = false;
     } else {

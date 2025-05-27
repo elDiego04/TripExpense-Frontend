@@ -11,9 +11,7 @@
   align-items: center;
   margin-bottom: 20px;
 }
-.no-activities-message{
-  color: white;
-}
+
 .activities-header .activities-title {
   font-size: 24px;
   margin-left: 23px;
@@ -90,34 +88,47 @@
 
 .action-buttons {
   display: flex;
-  gap: 8px;
+  gap: 5px !important;
   margin-top: 15px;
-}
-
-.action-buttons button {
-  flex: 1;
-  padding: 8px 0;
-  font-size: 13px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: center;
+  align-items: center;
 }
 
 .toggle-button {
-  background-color: #404040;
+  flex-grow: 1;
+  padding: 12px 0;
+  font-size: 12px !important;
+  background-color: #E38C4D !important;
   color: white;
   font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  min-width: 140px;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .toggle-button:hover {
-  background-color: #595959;
+  background-color: #CC7433 !important;
+}
+
+.edit-button,
+.delete-button {
+  width: 20px;
+  height: 31px !important;
+  padding: 0;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
 }
 
 .edit-button {
   background-color: #5c6bc0;
   color: white;
-  font-weight: bold;
 }
 
 .edit-button:hover {
@@ -127,9 +138,12 @@
 .delete-button {
   background-color: #f44336;
   color: white;
-  font-weight: bold;
 }
 
 .delete-button:hover {
   background-color: #d32f2f;
+}
+
+.no-activities-message {
+  color: white;
 }

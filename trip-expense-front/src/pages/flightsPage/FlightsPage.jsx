@@ -1,5 +1,5 @@
 import React from "react";
-import FlightsNavbar from "../../components/FlightsNavBar/FlightsNavbar";
+import Navbar from "../../components/Navbar/Navbar";
 import FlightsHero from "../../components/FlightsHero/FlightsHero";
 import FlightsSearch from "../../components/FlightsSearch/FlightsSearch";
 import FlightsPlaces from "../../components/FlightPlaces/FlightPlaces";
@@ -9,7 +9,7 @@ import "./FlightsPage.css"
 const FlightsPage = () => {
     return (
         <div className="fp-page">
-            <FlightsNavbar className="fp-navbar" />
+            <Navbar className="fp-navbar" />
             <FlightsHero className="-fp-hero">
                 <FlightsSearch className="fp-form" />
             </FlightsHero>
