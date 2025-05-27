@@ -65,7 +65,7 @@ const CitiesPlaces = ({ searchTerm }) => {
               cityId={city.cityId}
               name={city.name}
               country={city.country}
-              imageUrl={city.imageUrl}
+              imageUrl={city.imageUrl || "../../../assets/Sidney.jpg"}
             />
           ))
         ) : (

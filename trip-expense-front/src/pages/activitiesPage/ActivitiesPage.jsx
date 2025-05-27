@@ -111,7 +111,7 @@ const ActivitiesPage = () => {
                 key={activity.activityId}
                 activityId={activity.activityId}
                 name={activity.name}
-                imageUrl={activity.imageUrl}
+                imageUrl={activity.imageUrl || "../../../assets/Maldives.jpg"}
                 cityName={getCityName(activity.cityId)}
               />
             ))

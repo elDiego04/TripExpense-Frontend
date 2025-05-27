@@ -75,7 +75,7 @@ const Flights = () => {
           flights.map((flight) => (
             <div className="flight-card" key={flight.flightId}>
               <img
-                src={flight.logo || "https://via.placeholder.com/300"}
+                src={flight.logo || "../../../assets/Sidney.jpg"}
                 alt={`${flight.airline} logo`}
                 className="flight-logo"
               />

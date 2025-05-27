@@ -74,7 +74,7 @@ const Cities = () => {
         ) : (
           cities.map((city) => (
             <div key={city.cityId} className="city-card">
-              <img src={city.image || "https://via.placeholder.com/300"} alt={city.name} className="city-image" />
+              <img src={city.image || "../../../assets/Tokyo.jpg"} alt={city.name} className="city-image" />
               <div className="city-info">
                 <h3>{city.name}</h3>
                 <p><strong>País:</strong> {city.country}</p>

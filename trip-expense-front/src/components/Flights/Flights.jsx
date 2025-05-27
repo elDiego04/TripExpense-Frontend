@@ -14,16 +14,12 @@ const flights = [
 const Flights = () => {
     const navigate = useNavigate();
 
-    const handleSignupClick = () => {
-        navigate("/signup");
-    };
     return (
         <section className="flights">
             <div className="flights-header">
-                <div className="flights-text">
                     <h2>Vuelos</h2>
                     <p>Tu próxima aventura empieza con el vuelo perfecto.</p>
-                </div>
+                
                 
             </div>
             <div className="flights-cards">

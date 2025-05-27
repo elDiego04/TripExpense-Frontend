@@ -38,7 +38,7 @@ const CityDetailsPage = () => {
             <FaArrowLeft /> Volver
           </button>
           <div className="city-details-image">
-            <img src={city.imageUrl} alt={city.name} />
+            <img src={city.imageUrl || "../../../assets/Tokyo.jpg"} alt={city.name} />
           </div>
         </div>
 

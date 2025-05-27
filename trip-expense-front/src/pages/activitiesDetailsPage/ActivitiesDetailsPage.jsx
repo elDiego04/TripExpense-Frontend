@@ -57,7 +57,7 @@ const ActivityDetailsPage = () => {
             <FaArrowLeft /> Volver
           </button>
           <div className="activity-details-image">
-            <img src={activity.imageUrl} alt={activity.name} />
+            <img src={activity.imageUrl || "../../../assets/Maldives.jpg"} alt={activity.name} />
           </div>
         </div>
 

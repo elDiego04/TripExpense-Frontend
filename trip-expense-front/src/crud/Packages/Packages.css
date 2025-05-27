@@ -7,9 +7,9 @@
 
 .packages-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  flex-direction: column;
 }
 
 .packages-header .packages-title {

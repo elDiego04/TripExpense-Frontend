@@ -74,7 +74,7 @@ const Users = () => {
         ) : (
           users.map((user) => (
             <div className="user-card" key={user.id}>
-              <img src={user.image || "https://via.placeholder.com/300"} alt={`${user.firstName} ${user.lastName}`} className="user-image" />
+              <img src={user.image || "../../../assets/FotoPerfil1.png"} alt={`${user.firstName} ${user.lastName}`} className="user-image" />
               <div className="user-info">
                 <h3>{user.firstName} {user.lastName}</h3>
 

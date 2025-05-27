@@ -5,11 +5,8 @@ import { useNavigate } from "react-router-dom";
 const DestinationCard = ({city, img}) => {
     const navigate = useNavigate(); 
   
-    const handleSignupClick = () => {
-      navigate("/signup"); 
-    };
     return (
-        <div className="destination-card" onClick={handleSignupClick}>
+        <div className="destination-card" >
             <img src={img} alt={city} className="destination-card__image"/>
             <div className="destination-card__content">
                 <h3>{city}</h3>
